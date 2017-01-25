@@ -57,3 +57,7 @@ group :development, :test do
 end
 
 gem 'faker'
+
+group :development do
+  gem 'letter_opener_web'
+end
