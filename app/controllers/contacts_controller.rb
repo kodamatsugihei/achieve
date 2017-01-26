@@ -8,10 +8,10 @@ class ContactsController < ApplicationController
     end
     
     def create
-        # Contact.create(contact_params)
         @contact = Contact.new(contact_params)
         if @contact.save
             redirect_to root_path, notice: "お問い合わせが完了しました！"
+            NoticeMailer.sendmail_contact(@contact).deliver
         else
             render 'new'
         end
