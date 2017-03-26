@@ -7,7 +7,12 @@
         <% user_name = User.find(blog.user_id) %>
         <div class="row">
             <p>
-              <%= image_tag user_name.avatar.thumb.to_s %>
+              <!-- <%= image_tag user_name.avatar.thumb.to_s %> -->
+              <% if user_name.provider == '' %>
+                <%= image_tag user_name.avatar.thumb.to_s %>
+              <% else %>
+                <%= image_tag user_name.image_url %>
+              <% end %>
               <%= user_name.name %>が投稿しました。
             </p>
             <h4><strong><%= blog.title %></strong></h4>
