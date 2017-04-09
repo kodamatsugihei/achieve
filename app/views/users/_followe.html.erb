@@ -1,0 +1,10 @@
+<h2>フォローユーザー一覧</h2>
+<table class="table table-bordered">
+  <tr class="info"><th>名前</th><th>アドレス</th></tr>
+  <% @follow.each do |follow| %>
+    <tr>
+      <td><%= follow.name %></td>
+      <td><%= follow.email %></td>
+    </tr>
+  <% end %>
+</table>

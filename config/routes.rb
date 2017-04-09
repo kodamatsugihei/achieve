@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :conversations do
+    resources :messages
+  end
+
   resources :relationships, only: [:create, :destroy]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
