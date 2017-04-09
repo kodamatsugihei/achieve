@@ -6,7 +6,7 @@
     <p><%= @user.email %></p>
     <h2>フォローユーザー一覧</h2>
     <table class="table table-bordered">
-      <tr><th>名前</th><th>アドレス</th></tr>
+      <tr class="info"><th>名前</th><th>アドレス</th></tr>
       <% @follow.each do |follow| %>
         <tr>
           <td></td>
@@ -17,7 +17,7 @@
     </table>
     <h2>フォロワーユーザー一覧</h2>
     <table class="table table-bordered">
-      <tr><th>名前</th><th>アドレス</th></tr>
+      <tr class="info"><th>名前</th><th>アドレス</th></tr>
       <% @follower.each do |follower| %>
         <tr>
           <td><%= follower.name %></td>
