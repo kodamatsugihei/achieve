@@ -12,6 +12,10 @@ class CommentsController < ApplicationController
         format.json { render :show, status: :created, location: @comment }
         # JS形式でレスポンスを返します。
         format.js { render :index }
+
+        Pusher.trigger('test_channel', 'comment_created', {
+          message: 'あなたの作成したブログにコメントがつきました'
+          })
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
