@@ -57,9 +57,16 @@ gem 'cancan'
 
 gem 'activeresource'
 
+gem 'therubyracer', platforms: :ruby
+
 group :development, :test do
   gem 'hirb'         # モデルの出力結果を表形式で表示するGem
   gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 gem 'faker'
@@ -77,7 +84,10 @@ gem 'pusher'
 
 gem 'fog'
 
+gem 'dotenv-rails'
+gem 'unicorn'
+
 group :development do
   gem 'letter_opener_web'
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
 end
